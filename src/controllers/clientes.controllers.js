@@ -1,8 +1,9 @@
 import { pool } from '../../db_connecction.js';
-// Obtener todas las Usuarios 
-export const obtenerUsuarios = async (req, res) => { //async es para hacer multiples tareas a la vez 
+
+// Obtener todos los clientes
+export const obtenerClientes = async (req, res) => { //async es para hacer multiples tareas a la vez 
   try {
-    const [result] = await pool.query('SELECT * FROM Usuarios'); // pool.query es para hacer una consuta con la bd
+    const [result] = await pool.query('SELECT * FROM Clientes'); // pool.query es para hacer una consuta con la bd
     res.json(result);
   } catch (error) {
     return res.status(500).json({ // status (500) es un error en el servidor
